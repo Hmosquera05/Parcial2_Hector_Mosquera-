@@ -1,4 +1,5 @@
-﻿public class Program
+﻿
+public class Program
 {
     static void Main()
     {
@@ -8,7 +9,7 @@
         {
             jugarOtraVez = false;
             Console.Clear();
-            Console.WriteLine("Hola! Vas a jugar al juego 'Adivina el número'. El juego es muy sencillo, consiste en que los participantes comenzarán en orden a jugar y se turnarán para ingresar por pantalla un número ℕ hasta acertar el número oculto y salir ganador.!");
+            Console.WriteLine("Hola. Vas a jugar al juego 'Adivina el número'. El juego es muy sencillo, consiste en que los participantes comenzarán en orden a jugar y se turnarán para ingresar por pantalla un número ℕ hasta acertar el número oculto y salir ganador.!");
 
             int numJugadores;
             do
@@ -58,8 +59,8 @@
                 jugadorActual = (jugadorActual + 1) % numJugadores;
             }
 
-            Console.Write("¿Desea jugar otra vez? (s/n): ");
-            if (Console.ReadLine().Trim().ToLower() == "s")
+            Console.Write("¿Desean jugar otro tirito? (s/n): ");
+            if (Console.ReadLine().ToLower() == "s")
             {
                 jugarOtraVez = true;
             }
