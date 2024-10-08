@@ -23,10 +23,10 @@
                 notasEstudiantes.Add(nota);
             }
 
-            // Evaluar y clasificar cada estudiante
+            // Evaluar y clasificar cada estudiante de acuerdo su nota
             foreach (var nota in notasEstudiantes)
             {
-                double promedio = nota; // Aquí se asume que la nota ingresada es el promedio por simplicidad
+                double promedio = nota; // Como solo hay una nota por estudiante, el promedio es la nota misma.
                 string categoria = ClasificarDesempeno(promedio);
 
                 Console.WriteLine($"Estudiante con nota {nota} está en la categoría: {categoria}");
@@ -45,5 +45,24 @@
             Console.WriteLine($"\nTotal de estudiantes que aprobaron: {estudiantesGanaron}");
             Console.WriteLine($"Total de estudiantes que no aprobaron: {estudiantesPerdieron}");
 
-            
-    
+            // Preguntar si desea continuar
+            Console.WriteLine("¿Desea ingresar otro grupo de estudiantes? (s/n):");
+            continuar = Console.ReadLine().ToLower();
+        } while (continuar == "s");
+    }
+
+    static string ClasificarDesempeno(double promedio)
+    {
+        if (promedio >= 4.5)
+            return "Excelente";
+        else if (promedio >= 4.0)
+            return "Sobresaliente";
+        else if (promedio >= 3.5)
+            return "Bueno";
+        else
+            return "Insuficiente";
+    }
+}
+
+
+
