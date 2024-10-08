@@ -29,4 +29,32 @@
             int jugadorActual = 0;
             bool numeroAdivinado = false;
 
+            while (!numeroAdivinado)
+            {
+                Console.WriteLine($"\nTurno del Jugador {jugadorActual + 1}");
+                Console.Write("Ingrese su número: ");
+
+                if (int.TryParse(Console.ReadLine(), out int intento))
+                {
+                    if (intento > numeroSecreto)
+                    {
+                        Console.WriteLine("MENOR");
+                    }
+                    else if (intento < numeroSecreto)
+                    {
+                        Console.WriteLine("MAYOR");
+                    }
+                    else
+                    {
+                        Console.WriteLine("¡HAS GANADO!");
+                        numeroAdivinado = true;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Por favor, ingrese un número válido.");
+                }
+
+                jugadorActual = (jugadorActual + 1) % numJugadores;
+            }
             
