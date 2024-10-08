@@ -57,4 +57,13 @@
 
                 jugadorActual = (jugadorActual + 1) % numJugadores;
             }
-            
+
+            Console.Write("¿Desea jugar otra vez? (s/n): ");
+            if (Console.ReadLine().Trim().ToLower() == "s")
+            {
+                jugarOtraVez = true;
+            }
+
+        } while (jugarOtraVez);
+    }
+}
