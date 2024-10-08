@@ -16,4 +16,10 @@
                 Console.Write("Ingrese el número de jugadores (2-4): ");
             } while (!int.TryParse(Console.ReadLine(), out numJugadores) || numJugadores < 2 || numJugadores > 4);
 
-           
+            int rangoSuperior = numJugadores switch
+            {
+                2 => 50,
+                3 => 100,
+                4 => 200,
+                _ => throw new ArgumentOutOfRangeException()
+            };
