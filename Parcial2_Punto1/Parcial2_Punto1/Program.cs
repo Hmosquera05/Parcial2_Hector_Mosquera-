@@ -23,3 +23,10 @@
                 4 => 200,
                 _ => throw new ArgumentOutOfRangeException()
             };
+
+            Random random = new Random();
+            int numeroSecreto = random.Next(0, rangoSuperior + 1);
+            int jugadorActual = 0;
+            bool numeroAdivinado = false;
+
+            
